@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor. 
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <div><b>Por favor Ingrese los siguiente datos</b></div>
+        <h:form>
+            <table>
+                <tr>
+                    <td><h:outputLabel value="Login:"/></td>
+                    <td><h:inputText value="#{pruebaMB.cliente.login}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Password:"/></td>
+                    <td><h:inputSecret value="#{pruebaMB.cliente.clave}"/></td>
+                </tr>
+            </table>
+            <h:commandButton value="Aceptar" action="#{pruebaMB.verificarLogin()}"/><br/>
+            <h:outputText  style="color: red" value="#{pruebaMB.msjLogin}"/> 
+        </h:form>
+    </body>
+</html>

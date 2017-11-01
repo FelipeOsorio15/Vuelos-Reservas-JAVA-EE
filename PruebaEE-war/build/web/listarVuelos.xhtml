@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body> 
+        <h:form>
+        <div>TODO write content</div>
+        <h:commandLink value="Crear Vuelo" action="#{pruebaMB.mostrarcrearVuelo()}"/><br/>
+        <h:outputText value="Lista de Vuelos" /><br/>
+ 
+        <h:dataTable  bgcolor="grey" value="#{pruebaMB.vuelos}" var="vues" border="3" binding="#{pruebaMB.vueloSelect}">
+        <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="IdVuelo"/>  
+                    </f:facet>
+                    <h:outputText value="#{vues.idvuelo}"/>
+                </h:column>
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Origen"/>  
+                    </f:facet>
+                    <h:outputText value="#{vues.origen}"/>
+                </h:column>  
+             
+             <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Destino"/>  
+                    </f:facet>
+                    <h:outputText value="#{vues.destino}"/>
+                </h:column> 
+            
+             <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Codigo"/>  
+                    </f:facet>
+                    <h:outputText value="#{vues.codigo}"/>
+                </h:column> 
+            
+             <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Fecha"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.date1}"/>
+                </h:column> 
+                     
+            
+                <!-- estas son las columnas para editar y eliminar vuelos-->
+                <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                    <h:commandLink value="Editar"  action="#{pruebaMB.mostrareditarVuelo()}"/>
+                </h:column>
+                
+             <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                 <h:commandLink value="Eliminar" action="#{pruebaMB.mostrareliminarVuelo()}"/>
+                </h:column>
+              </h:dataTable>     
+        <h:outputLabel value="#{pruebaMB.mensaje}"/><br/>
+        <h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" />
+        </h:form>
+    </body>
+</html>

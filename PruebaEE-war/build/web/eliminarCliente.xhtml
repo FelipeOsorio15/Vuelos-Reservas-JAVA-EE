@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <div>TODO write content</div>
+         <h:form>
+            <table>
+                
+                <tr>
+                <td><h:outputText value="Nombre:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.nombres}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Apellidos:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.apellidos}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="tipo de Identificacion:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.ti}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Identificacion:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.identificacion}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Login:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.login}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Clave:"/></td>
+                <td><h:inputText value="#{pruebaMB.cliente.clave}"/></td>
+               </tr> 
+            </table>
+             <h:commandButton value="Eliminar Cliente" action="#{pruebaMB.eliminarCliente()}"/><br/>
+            
+            <h:outputLabel value="#{pruebaMB.mensaje}"/><br/>
+            <h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" />
+         
+        </h:form>
+    </body>
+</html>

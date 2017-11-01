@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+--> 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+    </h:head>
+    <body>
+        <div>creamos el vuelo</div>
+        <h:form>
+           <table>
+               
+                <tr>
+                <td><h:outputText value="Ciudad de Origen:"/></td>
+                <td><h:selectOneMenu value="#{pruebaMB.vuelo.origen}">
+                        <f:selectItems value="#{pruebaMB.origenCiudad}"/>
+                        
+                     </h:selectOneMenu>
+                </td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Ciudad de Destino:"/></td>
+                <td><h:selectOneMenu value="#{pruebaMB.vuelo.destino}">
+                        <f:selectItems value="#{pruebaMB.destinoCiudad}"/>
+                    </h:selectOneMenu></td>
+               </tr> 
+                   <tr>
+                <td><h:outputText value="Código:"/></td>               
+                <td><h:inputText value="#{pruebaMB.vuelo.codigo}"/></td>
+                </tr> 
+                  <tr>
+                      
+                      
+                <td><h:outputText value="Fecha:"/></td>
+                 
+                <td>
+                    <p:calendar value="#{pruebaMB.date1}" pattern="MM/dd/yyyy HH:mm" />
+                     <p:dialog header="Selected Dates" widgetVar="dialog"  
+                showEffect="fold" hideEffect="fold">  
+  
+        <h:panelGrid id="display" columns="2" cellpadding="5">  
+  
+            <h:outputText value="DateTime: " />  
+            <h:outputText value="#{pruebaMB.date1}">  
+                <f:convertDateTime pattern="MM/dd/yyyy HH:mm" />  
+            </h:outputText>  
+                        </h:panelGrid>  
+                    </p:dialog>  
+                </td>
+                
+                
+                
+               </tr> 
+              </table>
+            <h:commandButton value="Ingresar Vuelo" action="#{pruebaMB.crearVuelo()}"/><br/> 
+            <h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" />
+        </h:form>
+    </body>
+</html>

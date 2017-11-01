@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <div>TODO write content</div> 
+        <h:form>
+            <h:commandLink value="Gestionar Reservas" action="#{pruebaMB.mostrarcrearReserva()}"/><br/>
+        <h:outputText value="Lista de Ciudades" /><br/>
+ 
+        <h:dataTable value="#{pruebaMB.reservas}" var="ress" border="3" >
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="IdReserva"/>  
+                    </f:facet>
+                    <h:outputText value="#{ress.idreserva}"/>
+               </h:column>
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="T.I"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.cliente.identificacion}"/>
+                </h:column> 
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Codigo del Vuelo"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.vuelo.codigo}"/>
+                </h:column> 
+            
+            <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Origen del Vuelo"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.vuelo.origen}"/>
+                </h:column>
+            
+            <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Destino del Vuelo"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.vuelo.destino}"/>
+                </h:column>
+            
+            <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Fecha del Vuelo"/>  
+                    </f:facet>
+                    
+                    <h:outputText value=""/>
+                </h:column>
+            
+            <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Fecha de la Reserva"/>  
+                    </f:facet>
+                    <h:outputText value="#{pruebaMB.vuelo.codigo}"/>
+                </h:column>
+            
+                <!-- estas son las columnas para editar y eliminar proveedores-->
+                
+        </h:dataTable> 
+        </h:form> 
+    </body>
+</html>
